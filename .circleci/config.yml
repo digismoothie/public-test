@@ -28,7 +28,8 @@ jobs:
               exit 0
             else
               echo "Found git tags: $tags"
-              poetry publish --build --username="" --password=""
+              poetry config pypi-token.pypi "$PYPI_TOKEN"
+              poetry publish --build
             fi
 
 workflows:
