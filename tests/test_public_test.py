@@ -1,4 +1,4 @@
-from public_test import __version__, answer
+from public_test import __version__, ANSWER
 
 
 def test_version():
@@ -6,4 +6,4 @@ def test_version():
 
 
 def test_answer():
-    assert answer == 42
+    assert ANSWER == 42
