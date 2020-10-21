@@ -1,8 +1,4 @@
-from public_test import __version__, ANSWER
-
-
-def test_version():
-    assert __version__ == '0.1.0'
+from public_test import ANSWER
 
 
 def test_answer():

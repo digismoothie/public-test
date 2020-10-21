@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "public-test"
-version = "0.1.0"
+version = "0.1.1"
 description = "Sample public project setup"
 authors = [
     "Digismoothie s.r.o. <info@digismoothie.com>",
