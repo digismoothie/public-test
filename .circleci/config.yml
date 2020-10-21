@@ -1,0 +1,42 @@
+version: 2.1
+
+orbs:
+  python: circleci/python@1.2.0
+
+jobs:
+  test:
+    executor:
+      name: python/default
+      tag: "3.8"
+    steps:
+      - checkout
+      - python/install-packages:
+          pkg-manager: poetry
+      - run:
+          name: Test
+          command: poetry run pytest
+  release:
+    executor: python/default
+    steps:
+      - checkout
+      - run:
+          name: Release
+          command: |
+            tags=$(git tag --points-at HEAD)
+            if [ -z $tags ]; then
+              echo "Found no git tags"
+              exit 0
+            else
+              echo "Found git tags: $tags"
+              poetry publish --build --username="" --password=""
+            fi
+
+workflows:
+  version: 2
+  main:
+    jobs:
+      - test
+      - release:
+          filters:
+            branches:
+              only: master
