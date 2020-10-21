@@ -1,7 +1,7 @@
 public-test
 ===========
 
-Sample public project setup.
+Sample public project setup!
 
 Usage
 -----
