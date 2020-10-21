@@ -33,6 +33,5 @@ To release a new version of the library, follow these steps:
 #. Read the new number from the poetry's output and commit the change with ``git commit -am "release vX.Y.Z"``.
 #. Tag the commit with ``git tag vX.Y.Z``
 #. Release a new version by pushing it all to GitHub: ``git push origin master --tags``
-#. The CI builds the package and publishes it to the `PyPI <https://pypi.org/project/public-test/>`_.
 
-New releases get listed at `tags <https://github.com/digismoothie/django-toolbox/tags>`_. If you like your colleagues, for each release click on *Edit tag* and write a title and description (changelog).
+The CI automatically builds the package and publishes it to the `PyPI <https://pypi.org/project/public-test/>`_. New releases get listed at `tags <https://github.com/digismoothie/django-toolbox/tags>`_. If you like your colleagues, for each release click on *Edit tag* and write a title and description (changelog).
