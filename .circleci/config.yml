@@ -21,7 +21,15 @@ jobs:
       - checkout
       - run:
           name: Release
-          command: poetry publish --build --username="" --password=""
+          command: |
+            tags=$(git tag --points-at HEAD)
+            if [ -z $tags ]; then
+              echo "Found no git tags"
+              exit 0
+            else
+              echo "Found git tags: $tags"
+              poetry publish --build --username="" --password=""
+            fi
 
 workflows:
   version: 2
