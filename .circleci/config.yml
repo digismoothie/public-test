@@ -15,8 +15,20 @@ jobs:
       - run:
           name: Test
           command: poetry run pytest
+  release:
+    executor: python/default
+    steps:
+      - checkout
+      - run:
+          name: Release
+          command: poetry publish --build --username="" --password=""
 
 workflows:
+  version: 2
   main:
     jobs:
       - test
+      - release:
+          filters:
+            branches:
+              only: master
